@@ -1,8 +1,10 @@
 # Backend para Tienda de Mascotas (Pet Shop)
 
-[Link Pagina](https://github.com/EduMMorenolp/PetShop)
+## [Link Repositorio FrontEnd PetShop](https://github.com/EduMMorenolp/PetShop)
 
 Este repositorio contiene el backend de una aplicación de ventas para una tienda de mascotas, desarrollado con Node.js, Express y MySQL. La aplicación permite la gestión de productos, categorías, usuarios, carritos de compra y órdenes de compra.
+
+## Integrantes
 
 <div class="integrantes">
     <table>
@@ -59,6 +61,38 @@ Este repositorio contiene el backend de una aplicación de ventas para una tiend
 - Express
 - MySQL
 - JWT (JSON Web Tokens)
+
+# Estructura de archivos
+
+- 📁 backend
+    - 📁 config
+        - 📄 config.js
+        - 📄 database.js
+    - 📁 controllers
+        - 📄 userController.js
+        - 📄 productController.js
+        - 📄 categoryController.js
+        - 📄 cartController.js
+        - 📄 orderController.js
+    - 📁 middleware
+        - 📄 authMiddleware.js
+    - 📁 models
+        - 📄 User.js
+        - 📄 Product.js
+        - 📄 Category.js
+        - 📄 Cart.js
+        - 📄 Order.js
+    - 📁 routes
+        - 📄 userRoutes.js
+        - 📄 productRoutes.js
+        - 📄 categoryRoutes.js
+        - 📄 cartRoutes.js
+        - 📄 orderRoutes.js
+    - 📄 .env
+    - 📄 .gitignore
+    - 📄 package.json
+    - 📄 server.js
+
 
 # Estructura de la Base de Datos
 
