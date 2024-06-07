@@ -179,17 +179,10 @@ cd PetShopAPI
 npm install
 ```
 
-4. Configura la base de datos ejecutando las migraciones y sembrando datos iniciales (si aplica):
+4. Inicia el servidor:
 
 ```bash
-npx sequelize-cli db:migrate
-npx sequelize-cli db:seed:all 5. Inicia el servidor:
-```
-
-5. Inicia el servidor:
-
-```bash
-npm start
+npm run dev
 ```
 
 ## Uso
