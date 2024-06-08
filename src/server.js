@@ -5,8 +5,7 @@ const PORT = process.env.PORT || 3000
 
 app.use(express.json())
 
-app.get('/', (req, res) => {
-    const htmlResponse = `
+const htmlResponse = `
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -62,9 +61,10 @@ app.get('/', (req, res) => {
     </body>
     </html>
   `;
+
+app.get('/', (req, res) => {
     res.send(htmlResponse)
 })
-
 
 app.listen(PORT, () => {
     console.log('\n==================================================')
