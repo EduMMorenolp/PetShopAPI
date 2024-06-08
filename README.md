@@ -106,7 +106,7 @@ Este repositorio contiene el backend de una aplicación de ventas para una tiend
 El esquema de la base de datos utiliza MySQL y consta de las siguientes tablas:
 
 ## Usuarios
-
+```bash
 | Campo        | Tipo      | Descripción                  |
 |--------------|-----------|------------------------------|
 | id           | INT       | Identificador único del usuario  |
@@ -114,9 +114,9 @@ El esquema de la base de datos utiliza MySQL y consta de las siguientes tablas:
 | email        | VARCHAR   | Correo electrónico del usuario |
 | contraseña   | VARCHAR   | Contraseña del usuario (hash) |
 | rol          | VARCHAR   | Rol del usuario (admin, cliente) |
-
+```
 ## Productos
-
+```bash
 | Campo        | Tipo      | Descripción                  |
 |--------------|-----------|------------------------------|
 | id           | INT       | Identificador único del producto |
@@ -125,32 +125,32 @@ El esquema de la base de datos utiliza MySQL y consta de las siguientes tablas:
 | precio       | DECIMAL   | Precio del producto         |
 | imagen       | VARCHAR   | URL de la imagen del producto |
 | categoria_id | INT       | ID de la categoría a la que pertenece el producto |
-
+```
 ## Categorías
-
+```bash
 | Campo        | Tipo      | Descripción                  |
 |--------------|-----------|------------------------------|
 | id           | INT       | Identificador único de la categoría |
 | nombre       | VARCHAR   | Nombre de la categoría       |
-
+```
 ## Carrito
-
+```bash
 | Campo        | Tipo      | Descripción                  |
 |--------------|-----------|------------------------------|
 | id           | INT       | Identificador único del item de carrito |
 | usuario_id   | INT       | ID del usuario               |
 | producto_id  | INT       | ID del producto              |
 | cantidad     | INT       | Cantidad del producto en el carrito |
-
+```
 ## Órdenes
-
+```bash
 | Campo        | Tipo      | Descripción                  |
 |--------------|-----------|------------------------------|
 | id           | INT       | Identificador único de la orden |
 | usuario_id   | INT       | ID del usuario               |
 | total        | DECIMAL   | Total de la orden            |
 | estado       | VARCHAR   | Estado de la orden (pendiente, completada, cancelada) |
-
+```
 
 ## Requisitos Previos
 
