@@ -4,6 +4,13 @@
 
 Este repositorio contiene el backend de una aplicación de ventas para una tienda de mascotas, desarrollado con Node.js, Express y MySQL. La aplicación permite la gestión de productos, categorías, usuarios, carritos de compra y órdenes de compra.
 
+## Resumen del Flujo de Trabajo
+
+* master: Rama de producción, siempre estable.
+* pre-development: Rama de pre-desarrollo para integración y pruebas.
+* feature/*: Ramas para desarrollar nuevas características o correcciones de errores.
+* bugfix/*: Ramas para corregir errores encontrados durante el desarrollo.
+
 ## Integrantes
 
 <div class="integrantes">
