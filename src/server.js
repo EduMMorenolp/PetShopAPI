@@ -7,6 +7,8 @@ const PORT = process.env.PORT || 3000
 
 app.use(express.json())
 
+
+// Ruta home
 app.use('/', homeRouter)
 
 app.listen(PORT, () => {
