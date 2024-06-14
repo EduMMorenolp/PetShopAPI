@@ -9,7 +9,11 @@ CREATE TABLE IF NOT EXISTS Usuarios (
     contraseña VARCHAR(255) NOT NULL,
     rol ENUM('admin', 'cliente') NOT NULL
 );
-
+-- Tabla de Tipos de Categorias
+CREATE TABLE IF NOT EXISTS Categorias (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50)
+);
 -- Tabla de Productos
 CREATE TABLE IF NOT EXISTS Productos (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -22,11 +26,7 @@ CREATE TABLE IF NOT EXISTS Productos (
     categoria_id INT,
     FOREIGN KEY (categoria_id) REFERENCES Categorias(id)
 );
--- Tabla de Tipos de Productos
-CREATE TABLE IF NOT EXISTS Categorias (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(50)
-);
+
 
 -- Tabla de Carrito de Compras
 CREATE TABLE IF NOT EXISTS Carrito (
