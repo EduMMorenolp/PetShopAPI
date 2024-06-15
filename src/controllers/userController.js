@@ -30,7 +30,6 @@ async function registroUsuario(req, res) {
     res.status(500).json({ msg: 'Error al registrar el usuario' });
   }
 }
-
 // Función para iniciar sesión y obtener un token JWT
 async function loginUsuario(req, res) {
   const { email, contraseña } = req.body;
@@ -68,7 +67,6 @@ async function loginUsuario(req, res) {
     res.status(500).json({ msg: 'Error al iniciar sesión' });
   }
 }
-
 // Función para obtener todos los usuarios (requiere rol de administrador)
 async function obtenerTodosUsuarios(req, res) {
   try {
@@ -80,7 +78,6 @@ async function obtenerTodosUsuarios(req, res) {
     res.status(500).json({ msg: 'Error al obtener los usuarios' });
   }
 }
-
 // Función para obtener un usuario por ID (requiere rol de administrador)
 async function obtenerUsuarioPorId(req, res) {
   const usuarioId = req.params.id;
@@ -99,7 +96,6 @@ async function obtenerUsuarioPorId(req, res) {
     res.status(500).json({ msg: 'Error al obtener el usuario' });
   }
 }
-
 // Función para actualizar un usuario por ID (requiere rol de administrador)
 async function actualizarUsuario(req, res) {
   const usuarioId = req.params.id;
@@ -124,7 +120,6 @@ async function actualizarUsuario(req, res) {
     res.status(500).json({ msg: 'Error al actualizar el usuario' });
   }
 }
-
 // Función para borrar un usuario por ID (requiere rol de administrador)
 async function borrarUsuario(req, res) {
   const usuarioId = req.params.id;
