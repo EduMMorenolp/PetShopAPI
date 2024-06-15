@@ -100,49 +100,60 @@ El esquema de la base de datos utiliza MySQL y consta de las siguientes tablas:
 
 ## Usuarios
 
-| Campo        | Tipo      | Descripción                  |
-|--------------|-----------|------------------------------|
-| id           | INT       | Identificador único del usuario  |
-| nombre       | VARCHAR   | Nombre del usuario           |
-| email        | VARCHAR   | Correo electrónico del usuario |
-| contraseña   | VARCHAR   | Contraseña del usuario (hash) |
-| rol          | VARCHAR   | Rol del usuario (admin, cliente) |
-
-## Productos
-
-| Campo        | Tipo      | Descripción                  |
-|--------------|-----------|------------------------------|
-| id           | INT       | Identificador único del producto |
-| nombre       | VARCHAR   | Nombre del producto          |
-| descripción  | TEXT      | Descripción del producto    |
-| precio       | DECIMAL   | Precio del producto         |
-| imagen       | VARCHAR   | URL de la imagen del producto |
-| categoria_id | INT       | ID de la categoría a la que pertenece el producto |
+| Campo        | Tipo      | Descripción                              |
+|--------------|-----------|------------------------------------------|
+| id           | INT       | Identificador único del usuario          |
+| nombre       | VARCHAR   | Nombre del usuario                       |
+| email        | VARCHAR   | Correo electrónico del usuario           |
+| contraseña   | VARCHAR   | Contraseña del usuario (hash)            |
+| rol          | ENUM      | Rol del usuario (admin, cliente)         |
 
 ## Categorías
 
-| Campo        | Tipo      | Descripción                  |
-|--------------|-----------|------------------------------|
-| id           | INT       | Identificador único de la categoría |
-| nombre       | VARCHAR   | Nombre de la categoría       |
+| Campo        | Tipo      | Descripción                              |
+|--------------|-----------|------------------------------------------|
+| id           | INT       | Identificador único de la categoría      |
+| nombre       | VARCHAR   | Nombre de la categoría                   |
+
+## Productos
+
+| Campo        | Tipo      | Descripción                              |
+|--------------|-----------|------------------------------------------|
+| id           | INT       | Identificador único del producto         |
+| nombre       | VARCHAR   | Nombre del producto                      |
+| descripcion  | TEXT      | Descripción del producto                 |
+| precio       | DECIMAL   | Precio del producto                      |
+| imagen       | VARCHAR   | URL de la imagen del producto            |
+| categoria_id | INT       | ID de la categoría a la que pertenece el producto |
 
 ## Carrito
 
-| Campo        | Tipo      | Descripción                  |
-|--------------|-----------|------------------------------|
-| id           | INT       | Identificador único del item de carrito |
-| usuario_id   | INT       | ID del usuario               |
-| producto_id  | INT       | ID del producto              |
-| cantidad     | INT       | Cantidad del producto en el carrito |
+| Campo        | Tipo      | Descripción                              |
+|--------------|-----------|------------------------------------------|
+| id           | INT       | Identificador único del item de carrito  |
+| usuario_id   | INT       | ID del usuario                           |
+| producto_id  | INT       | ID del producto                          |
+| cantidad     | INT       | Cantidad del producto en el carrito      |
 
 ## Órdenes
 
-| Campo        | Tipo      | Descripción                  |
-|--------------|-----------|------------------------------|
-| id           | INT       | Identificador único de la orden |
-| usuario_id   | INT       | ID del usuario               |
-| total        | DECIMAL   | Total de la orden            |
-| estado       | VARCHAR   | Estado de la orden (pendiente, completada, cancelada) |
+| Campo        | Tipo      | Descripción                              |
+|--------------|-----------|------------------------------------------|
+| id           | INT       | Identificador único de la orden          |
+| usuario_id   | INT       | ID del usuario                           |
+| total        | DECIMAL   | Total de la orden                        |
+| estado       | ENUM      | Estado de la orden (pendiente, completada, cancelada) |
+| fecha_pedido | TIMESTAMP | Fecha y hora del pedido                  |
+
+## OrdenDetalles
+
+| Campo        | Tipo      | Descripción                              |
+|--------------|-----------|------------------------------------------|
+| id           | INT       | Identificador único del detalle de la orden |
+| orden_id     | INT       | ID de la orden                           |
+| producto_id  | INT       | ID del producto                          |
+| cantidad     | INT       | Cantidad del producto en la orden        |
+| precio       | DECIMAL   | Precio del producto en la orden          |
 
 
 ## Requisitos Previos
