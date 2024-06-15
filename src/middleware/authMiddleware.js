@@ -21,4 +21,13 @@ async function verificarToken(req, res, next) {
   }
 }
 
-module.exports = verificarToken;
+const isAdmin = (req, res, next) => {
+  // Verificar si el usuario está autenticado y tiene el rol de administrador
+  if (req.user && req.user.rol === 'admin') {
+    return next(); 
+  } else {
+    return res.status(403).json({ message: 'Acceso no autorizado' });
+  }
+};
+
+module.exports = { verificarToken, isAdmin };
