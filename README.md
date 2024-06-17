@@ -66,8 +66,8 @@ Este repositorio contiene el backend de una aplicación de ventas para una tiend
 
 - 📁 backend
     - 📁 config
-        - 📄 config.js
         - 📄 database.js
+        - 💽 database.sql
     - 📁 controllers
         - 📄 userController.js
         - 📄 productController.js
@@ -76,19 +76,13 @@ Este repositorio contiene el backend de una aplicación de ventas para una tiend
         - 📄 orderController.js
     - 📁 middleware
         - 📄 authMiddleware.js
-    - 📁 models
-        - 📄 User.js
-        - 📄 Product.js
-        - 📄 Category.js
-        - 📄 Cart.js
-        - 📄 Order.js
     - 📁 routes
         - 📄 userRoutes.js
         - 📄 productRoutes.js
         - 📄 categoryRoutes.js
         - 📄 cartRoutes.js
         - 📄 orderRoutes.js
-    - 📄 .env
+    - 📄 .env (archivo de configuración requerido)
     - 📄 .gitignore
     - 📄 package.json
     - 📄 server.js
