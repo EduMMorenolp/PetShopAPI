@@ -14,7 +14,7 @@ app.use(morgan('dev'));
 // Ruta home
 app.use('/', homeRouter)
 // Rutas de usuario
-app.use('/usuarios', userRoutes);
+app.use('/user', userRoutes);
 
 app.listen(PORT, () => {
     console.log('\n==================================================')

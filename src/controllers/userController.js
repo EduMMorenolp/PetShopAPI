@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 // Función para registrar un nuevo usuario
 async function registroUsuario(req, res) {
   const { nombre, email, contraseña } = req.body;
-
+  const rol = "cliente"
   try {
     // Verificar si el usuario ya existe
     const consultaUsuarioExistente = 'SELECT * FROM usuarios WHERE email = ?';
@@ -21,8 +21,8 @@ async function registroUsuario(req, res) {
     const contraseñaHash = await bcrypt.hash(contraseña, salt);
 
     // Insertar nuevo usuario
-    const consultaInsertarUsuario = 'INSERT INTO usuarios (nombre, email, contraseña) VALUES (?, ?, ?)';
-    const [resultado] = await db.promise().query(consultaInsertarUsuario, [nombre, email, contraseñaHash]);
+    const consultaInsertarUsuario = 'INSERT INTO usuarios (nombre, email, contraseña, rol) VALUES (?, ?, ?, ?)';
+    const [resultado] = await db.promise().query(consultaInsertarUsuario, [nombre, email, contraseñaHash, rol]);
 
     res.json({ msg: 'Usuario registrado correctamente', id: resultado.insertId });
   } catch (error) {
@@ -33,7 +33,6 @@ async function registroUsuario(req, res) {
 // Función para iniciar sesión y obtener un token JWT
 async function loginUsuario(req, res) {
   const { email, contraseña } = req.body;
-
   try {
     // Verificar si el usuario existe
     const consultaUsuario = 'SELECT * FROM usuarios WHERE email = ?';
