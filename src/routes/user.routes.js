@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { registroUsuario, loginUsuario, obtenerTodosUsuarios, obtenerUsuarioPorId, actualizarUsuario, borrarUsuario } = require('../controllers/userController');
+const { registroUsuario, loginUsuario, obtenerTodosUsuarios, obtenerUsuarioPorId, actualizarUsuario, borrarUsuario, temporal } = require('../controllers/userController');
 const { isAdmin, verificarToken } = require('../middleware/authMiddleware');
 
 // Ruta para registrar un nuevo usuario
@@ -14,5 +14,8 @@ router.get('/admin/usuarios', verificarToken, isAdmin, obtenerTodosUsuarios);
 router.get('/admin/usuarios/:id', verificarToken, isAdmin, obtenerUsuarioPorId);
 router.put('/admin/usuarios/:id', verificarToken, isAdmin, actualizarUsuario);
 router.delete('/admin/usuarios/:id', verificarToken, isAdmin, borrarUsuario);
+
+// Temporal
+router.get('/temporal', temporal);
 
 module.exports = router;
