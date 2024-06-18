@@ -4,9 +4,14 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 async function temporal(req, res) {
-  const todosUsuarios = 'SELECT * FROM usuarios';
-  const [usuarios] = await db.promise().query(todosUsuarios);
-  res.json(usuarios);
+  try {
+    const [rows, fields] = await connection.promise().query('SELECT * FROM usuarios');
+    
+    res.json(rows);
+  } catch (error) {
+    console.error('Error en la consulta:', error);
+    res.status(500).json({ error: 'Error interno del servidor' });
+  }
 }
 
 // Función para registrar un nuevo usuario
