@@ -3,15 +3,6 @@ const db = require('../config/database');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-async function temporal(req, res) {
-  try {
-    const [rows, fields] = await db.promise().query('SELECT * FROM Productos');
-    res.json(rows);
-  } catch (error) {
-    console.error('Error en la consulta:', error);
-    res.status(500).json({ error: 'Error interno del servidor' });
-  }
-}
 
 // Función para registrar un nuevo usuario
 async function registroUsuario(req, res) {
@@ -159,6 +150,5 @@ module.exports = {
   obtenerTodosUsuarios,
   obtenerUsuarioPorId,
   actualizarUsuario,
-  borrarUsuario,
-  temporal
+  borrarUsuario
 };
