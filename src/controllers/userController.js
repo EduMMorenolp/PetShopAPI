@@ -5,8 +5,7 @@ const jwt = require('jsonwebtoken');
 
 async function temporal(req, res) {
   try {
-    const [rows, fields] = await connection.promise().query('SELECT * FROM usuarios');
-    
+    const [rows, fields] = await db.promise().query('SELECT * FROM usuarios');
     res.json(rows);
   } catch (error) {
     console.error('Error en la consulta:', error);
