@@ -61,6 +61,9 @@ Este repositorio contiene el backend de una aplicación de ventas para una tiend
 - Express
 - MySQL
 - JWT (JSON Web Tokens)
+- Bcryptjs (dependencies)
+- Dotenv (dependencies)
+- Morgan (dependencies)
 
 # Estructura de archivos
 
