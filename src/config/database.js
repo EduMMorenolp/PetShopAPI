@@ -1,11 +1,12 @@
 const mysql = require('mysql2');
+require('dotenv').config();
 
 // Crear la conexión a la base de datos
 const connection = mysql.createConnection({
-  host: 'localhost', // Cambia esto si tu base de datos no está en localhost
-  user: 'tu_usuario', // Reemplaza con tu usuario de MySQL
-  password: 'tu_contraseña', // Reemplaza con tu contraseña de MySQL
-  database: 'petshopAPI' // Reemplaza con el nombre de tu base de datos
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 });
 
 // Conectar a la base de datos
