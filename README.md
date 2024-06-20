@@ -87,11 +87,12 @@ Este repositorio contiene el backend de una aplicación de ventas para una tiend
     - 📁 middleware
         - 📄 authMiddleware.js
     - 📁 routes
-        - 📄 userRoutes.js
-        - 📄 productRoutes.js
-        - 📄 categoryRoutes.js
-        - 📄 cartRoutes.js
-        - 📄 orderRoutes.js
+        - 📄 home.routes.js
+        - 📄 user.routes.js
+        - 📄 product.routes.js
+        - 📄 category.routes.js
+        - 📄 cart.routes.js
+        - 📄 order.routes.js
     - 📄 .env (archivo de configuración requerido)
     - 📄 .gitignore
     - 📄 package.json
