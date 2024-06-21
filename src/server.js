@@ -3,6 +3,7 @@ const homeRouter = require('./routes/home.routes')
 const userRoutes = require('./routes/user.routes');
 const productosRouter =require('./routes/product.routes');
 const categoriaRouter =require('./routes/category.routes')
+
 const morgan = require('morgan');
 
 const app = express()
