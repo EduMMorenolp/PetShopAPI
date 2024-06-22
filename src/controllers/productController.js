@@ -75,7 +75,8 @@ async function modificarProducto(req, res) {
         //Actualizar producto
         const actualizarProducto = 'UPDATE productos SET nombre = ?, descripcion = ?, precio = ?, peso = ?, u_medida = ? WHERE id = ?';
         await db.promise().query(actualizarProducto, [nombre, descripcion , precio , peso , u_medida ,  ProductoId]);
-       res.json({msg: 'Producto actualizado correctamente'});
+        res.json({msg: 'Producto actualizado correctamente'});
+    
     } catch (error) {
         console.error(error);
         res.status(500).json({msg: 'Error al actualizar producto'})
