@@ -6,7 +6,6 @@ require('dotenv').config();
 // Middleware para verificar el token JWT
 async function verificarToken(req, res, next) {
   const token = req.header('Authorization');
-
   if (!token) {
     return res.status(401).json({ msg: 'No hay token, autorización denegada' });
   }
@@ -14,7 +13,7 @@ async function verificarToken(req, res, next) {
   try {
     const JWT_SECRET = process.env.JWT_SECRET;
     const decoded = jwt.verify(token, JWT_SECRET);
-    
+
     // Obtener la conexión existente desde el módulo de base de datos
     const connection = db.promise();
 
@@ -39,7 +38,7 @@ async function verificarToken(req, res, next) {
 const isAdmin = (req, res, next) => {
   // Verificar si el usuario está autenticado y tiene el rol de administrador
   if (req.usuario && req.usuario.rol === 'admin') {
-    return next(); 
+    return next();
   } else {
     return res.status(403).json({ message: 'Acceso no autorizado' });
   }
