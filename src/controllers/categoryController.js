@@ -81,8 +81,8 @@ async function modificarCategoria(req,res) {
         }
         
         //Modificar Categoria
-        const nuevoNombre= 'UPDATE Categorias SET nombre=?';
-        await db.promise().query(nuevoNombre,[nombre]);
+        const nuevoNombre= 'UPDATE Categorias SET nombre=? WHERE id=?';
+        await db.promise().query(nuevoNombre,[nombre, categoriaid]);
         res.json({msg: 'Categoria modificada con Exito'})
     } catch (error) {
         console.error('error al modificar la categoria',error);
