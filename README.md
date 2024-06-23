@@ -211,26 +211,26 @@ npm run dev
 
 - `POST user/registro` - Crear una cuenta de cliente.
 - `POST user/login` - Iniciar sesión y obtener un token.
-- `GET user/admin/usuarios` - Obtener todos los usuarios (requiere rol de administrador).
-- `GET user/admin/usuarios/:id` - Obtener un usuario por ID (requiere rol de administrador).
-- `PUT user/admin/usuarios/:id` - Actualizar un usuario por ID (requiere rol de administrador).
-- `DELETE user/admin/usuarios/:id` - Borrar un usuario por ID (requiere rol de administrador).
+- `GET user/admin/usuarios` - Obtener todos los usuarios (requiere rol de administrador y token).
+- `GET user/admin/usuarios/:id` - Obtener un usuario por ID (requiere rol de administrador y token).
+- `PUT user/admin/usuarios/:id` - Actualizar un usuario por ID (requiere rol de administrador y token).
+- `DELETE user/admin/usuarios/:id` - Borrar un usuario por ID (requiere rol de administrador y token).
 
 #### Productos
 
-- `POST /admin/producto` - Crear un nuevo producto (requiere rol de administrador).
+- `POST /admin/producto` - Crear un nuevo producto (requiere rol de administrador y token).
 - `GET /productos` - Obtener todos los productos disponibles.
 - `GET /producto/:id` - Obtener un producto por ID.
-- `PUT /admin/producto/:id` - Actualizar un producto por ID (requiere rol de administrador).
-- `DELETE /admin/producto/:id` - Borrar un producto por ID (requiere rol de administrador).
+- `PUT /admin/producto/:id` - Actualizar un producto por ID (requiere rol de administrador y token).
+- `DELETE /admin/producto/:id` - Borrar un producto por ID (requiere rol de administrador y token).
 
 #### Categorías
 
-- `POST /admin/categorias` - Crear una nueva categoría (requiere rol de administrador).
+- `POST /admin/categorias` - Crear una nueva categoría (requiere rol de administrador y token).
 - `GET /categoria` - Obtener todas las categorías disponibles.
 - `GET /categoria/:id` - Obtener una categoría por ID.
-- `PUT /admin/categoria/:id` - Actualizar una categoría por ID (requiere rol de administrador).
-- `DELETE /admin/categoria/:id` - Borrar una categoría por ID (requiere rol de administrador).
+- `PUT /admin/categoria/:id` - Actualizar una categoría por ID (requiere rol de administrador y token).
+- `DELETE /admin/categoria/:id` - Borrar una categoría por ID (requiere rol de administrador y token).
 
 #### Carrito de Compra
 
