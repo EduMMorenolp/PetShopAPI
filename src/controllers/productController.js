@@ -20,7 +20,7 @@ async function registrarProducto(req, res) {
             console.error('Error al registrar el producto:', error);
             res.status(500).json({ msg: 'Error al registrar el producto' });
         }
-    //res.status(200).json("Productos cargados")
+    
 };
 //Consultar todos los productos
 async function todosLosProductos(req,res){
@@ -33,7 +33,7 @@ async function todosLosProductos(req,res){
         res.status(500).json({ msg: 'Error al obtener los productos'});
         
     }
-    //res.status(200).json("Todos los productos")
+    
 };
 
 //Consultar producto por ID
@@ -55,7 +55,7 @@ async function buscarProductoPorID(req,res){
         res.status(500).json({msg: 'Error al obtener el producto'});
     }
     
-    //res.status(200).json("Producto por ID")
+    
 };
 
 //Modificar producto

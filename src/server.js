@@ -21,7 +21,7 @@ app.use('/user', userRoutes);
 
 //Ruta de Productos
 app.use('/', productosRouter);
-
+//Ruta de Categoria
 app.use('/',categoriaRouter)
 
 app.listen(PORT, () => {
