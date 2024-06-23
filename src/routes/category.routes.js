@@ -14,11 +14,10 @@ router.post('/admin/categorias', crearCategoria,);
 router.get('/categorias', todasLasCategorias);
 
 //Obtener categoria por ID
-router.get('/categorias/:id', obtenerCategoriaPorID);
+router.get('/categoria/:id', obtenerCategoriaPorID);//localhost:3000/categorias/id
 
 //Modificar categoria
-router.put('/admin/categoria', modificarCategoria);
-// falta agregar isAdmin, verificarToken
+router.put('/admin/categoria/:id',modificarCategoria); //localhost:3000/admin/categoria ----falta agregar isAdmin, verificarToken
 
 //Eliminar categoria
 router.delete('/admin/categoria/:id', eliminarCategoria);
