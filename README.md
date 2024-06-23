@@ -205,30 +205,32 @@ npm run dev
 
 ### Endpoints de la API
 
+- URL PetShopAPI : https://edudev.alwaysdata.net/petshopAPI/
+
 #### Usuarios
 
-- `POST /usuarios/registro` - Crear una cuenta de cliente.
-- `POST /usuarios/login` - Iniciar sesión y obtener un token.
-- `GET /admin/usuarios` - Obtener todos los usuarios (requiere rol de administrador).
-- `GET /admin/usuarios/:id` - Obtener un usuario por ID (requiere rol de administrador).
-- `PUT /admin/usuarios/:id` - Actualizar un usuario por ID (requiere rol de administrador).
-- `DELETE /admin/usuarios/:id` - Borrar un usuario por ID (requiere rol de administrador).
+- `POST user/registro` - Crear una cuenta de cliente.
+- `POST user/login` - Iniciar sesión y obtener un token.
+- `GET user/admin/usuarios` - Obtener todos los usuarios (requiere rol de administrador).
+- `GET user/admin/usuarios/:id` - Obtener un usuario por ID (requiere rol de administrador).
+- `PUT user/admin/usuarios/:id` - Actualizar un usuario por ID (requiere rol de administrador).
+- `DELETE user/admin/usuarios/:id` - Borrar un usuario por ID (requiere rol de administrador).
 
 #### Productos
 
-- `POST /admin/productos` - Crear un nuevo producto (requiere rol de administrador).
+- `POST /admin/producto` - Crear un nuevo producto (requiere rol de administrador).
 - `GET /productos` - Obtener todos los productos disponibles.
-- `GET /productos/:id` - Obtener un producto por ID.
-- `PUT /admin/productos/:id` - Actualizar un producto por ID (requiere rol de administrador).
-- `DELETE /admin/productos/:id` - Borrar un producto por ID (requiere rol de administrador).
+- `GET /producto/:id` - Obtener un producto por ID.
+- `PUT /admin/producto/:id` - Actualizar un producto por ID (requiere rol de administrador).
+- `DELETE /admin/producto/:id` - Borrar un producto por ID (requiere rol de administrador).
 
 #### Categorías
 
 - `POST /admin/categorias` - Crear una nueva categoría (requiere rol de administrador).
-- `GET /categorias` - Obtener todas las categorías disponibles.
-- `GET /categorias/:id` - Obtener una categoría por ID.
-- `PUT /admin/categorias/:id` - Actualizar una categoría por ID (requiere rol de administrador).
-- `DELETE /admin/categorias/:id` - Borrar una categoría por ID (requiere rol de administrador).
+- `GET /categoria` - Obtener todas las categorías disponibles.
+- `GET /categoria/:id` - Obtener una categoría por ID.
+- `PUT /admin/categoria/:id` - Actualizar una categoría por ID (requiere rol de administrador).
+- `DELETE /admin/categoria/:id` - Borrar una categoría por ID (requiere rol de administrador).
 
 #### Carrito de Compra
 
