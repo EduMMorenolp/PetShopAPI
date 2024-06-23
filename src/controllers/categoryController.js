@@ -5,7 +5,7 @@ const db = require('../config/database');
 async function crearCategoria(req, res) {
     const nuevaCategoria = req.body.nombre;
     try {
-        const categoriaExistente = 'SELECT nombre FROM Categorias WHERE nombre=?';
+        const categoriaExistente = 'SELECT nombre FROM categorias WHERE nombre=?';
         const [consulta] = await db.promise().query(categoriaExistente, [nuevaCategoria]);
         if (consulta.length > 0) {
             return res.status(400).json({ msg: "La categoria ya existe!!!" });
@@ -26,7 +26,7 @@ async function crearCategoria(req, res) {
 // Obtener todas la scategorias 
 async function todasLasCategorias(req, res) {
     try {
-        const categoriasExistentes = 'SELECT COUNT(*) AS count FROM Categorias';
+        const categoriasExistentes = 'SELECT COUNT(*) AS count FROM categorias';
         const [resultado] = await db.promise().query(categoriasExistentes);
         const categoriasCount = resultado[0].count;
         if (categoriasCount === 0) {
@@ -46,7 +46,7 @@ async function obtenerCategoriaPorID(req, res) {
 
     try {
         const categoria = req.params.id;
-        const categoriaId = 'SELECT * FROM Categorias WHERE id = ?';
+        const categoriaId = 'SELECT * FROM categorias WHERE id = ?';
         const [consulta] = await db.promise().query(categoriaId, [categoria]);
 
         if (consulta.length === 0) {
@@ -66,13 +66,13 @@ async function modificarCategoria(req, res) {
     const { nombre } = req.body;
     try {
         //Consultar si la categoria existe
-        const categoriaExistente = 'SELECT * FROM Categorias WHERE id=?';
+        const categoriaExistente = 'SELECT * FROM categorias WHERE id=?';
         const [consulta] = await db.promise().query(categoriaExistente, [categoriaid]);
         if (consulta.length === 0) {
             return res.status(400).json({ msg: "La categoria no existe!!!" });
         }
         //Modificar Categoria
-        const nuevoNombre = 'UPDATE Categorias SET nombre=? WHERE id=?';
+        const nuevoNombre = 'UPDATE categorias SET nombre=? WHERE id=?';
         await db.promise().query(nuevoNombre, [nombre, categoriaid]);
         res.json({ msg: 'Categoria modificada con Exito' })
     } catch (error) {
@@ -86,7 +86,7 @@ async function eliminarCategoria(req, res) {
     const categoriaId = req.params.id
     try {
         // Verificar si la categoria existe
-        const categoriaExistente = 'SELECT * FROM Categorias WHERE id=?';
+        const categoriaExistente = 'SELECT * FROM categorias WHERE id=?';
         const [consulta] = await db.promise().query(categoriaExistente, [categoriaId]);
         if (consulta.length === 0) {
             return res.status(400).json({ msg: "La categoria no existe!!!" });
