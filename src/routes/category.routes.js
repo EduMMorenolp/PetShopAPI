@@ -12,15 +12,15 @@ router.get('/categorias', todasLasCategorias);
 router.get('/categoria/:id', obtenerCategoriaPorID);
 
 //Crear una nueva categoria
-router.post('/admin/categoria', verificarToken, crearCategoria,);
-// falta agregar isAdmin
+router.post('/admin/categoria', crearCategoria,);
+// falta agregar isAdmin y verificarToken 
 
 //Modificar categoria
-router.put('/admin/categoria/:id', verificarToken, modificarCategoria);
-// falta agregar isAdmin
+router.put('/admin/categoria/:id', modificarCategoria);
+// falta agregar isAdmin y verificarToken 
 
 //Eliminar categoria
-router.delete('/admin/categoria/:id', verificarToken, eliminarCategoria);
-// falta agregar isAdmin
+router.delete('/admin/categoria/:id', eliminarCategoria);
+// falta agregar isAdmin y verificarToken 
 
 module.exports = router

@@ -6,8 +6,8 @@ const { isAdmin, verificarToken } = require('../middleware/authMiddleware');
 // Rutas  productos 
 
 //Crear Producto
-router.post('/admin/producto', registrarProducto);
-// falta agregar verificarToken,isAdmin
+router.post('/admin/producto', verificarToken, registrarProducto);
+// falta agregar isAdmin
 
 //Solicitar todos los productos
 router.get('/productos', todosLosProductos);
@@ -16,11 +16,11 @@ router.get('/productos', todosLosProductos);
 router.get('/producto/:id', buscarProductoPorID);
 
 //Modificar un producto
-router.put('/admin/producto/:id', modificarProducto);
-// falta agregar verificarToken,isAdmin
+router.put('/admin/producto/:id', verificarToken, modificarProducto);
+// falta agregar isAdmin
 
 //Borrar un producto
-router.delete('/admin/producto/:id', eliminarProducto);
-// falta agregar verificarToken,isAdmin
+router.delete('/admin/producto/:id', verificarToken, eliminarProducto);
+// falta agregar isAdmin
 
 module.exports = router;
