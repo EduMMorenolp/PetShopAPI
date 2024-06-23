@@ -12,7 +12,7 @@ router.get('/categorias', todasLasCategorias);
 router.get('/categoria/:id', obtenerCategoriaPorID);
 
 //Crear una nueva categoria
-router.post('/admin/categoria', crearCategoria,);
+router.post('/admin/categoria', crearCategoria);
 // falta agregar isAdmin y verificarToken 
 
 //Modificar categoria
