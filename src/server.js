@@ -1,7 +1,9 @@
 const express = require('express');
 const homeRouter = require('./routes/home.routes');
 const userRoutes = require('./routes/user.routes');
-const orderRoutes = require('./routes/order.routes');
+const productosRouter = require('./routes/product.routes');
+const categoriaRouter = require('./routes/category.routes')
+
 const morgan = require('morgan');
 
 
@@ -17,9 +19,11 @@ app.use(morgan('dev'));
 app.use('/', homeRouter)
 // Rutas de usuario
 app.use('/user', userRoutes);
-//Ruta de ordenes
-app.use('/order', orderRoutes);
 
+//Ruta de Productos
+app.use('/', productosRouter);
+
+app.use('/', categoriaRouter)
 
 app.listen(PORT, () => {
     console.log('\n==================================================')

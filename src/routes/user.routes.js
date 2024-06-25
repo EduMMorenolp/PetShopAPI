@@ -15,4 +15,5 @@ router.get('/admin/usuarios/:id', verificarToken, isAdmin, obtenerUsuarioPorId);
 router.put('/admin/usuarios/:id', verificarToken, isAdmin, actualizarUsuario);
 router.delete('/admin/usuarios/:id', verificarToken, isAdmin, borrarUsuario);
 
+
 module.exports = router;

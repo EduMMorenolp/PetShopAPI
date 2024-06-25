@@ -4,6 +4,13 @@
 
 Este repositorio contiene el backend de una aplicación de ventas para una tienda de mascotas, desarrollado con Node.js, Express y MySQL. La aplicación permite la gestión de productos, categorías, usuarios, carritos de compra y órdenes de compra.
 
+## Resumen del Flujo de Trabajo
+
+* master: Rama de producción, siempre estable.
+* pre-development: Rama de pre-desarrollo para integración y pruebas.
+* feature/*: Ramas para desarrollar nuevas características o correcciones de errores.
+* bugfix/*: Ramas para corregir errores encontrados durante el desarrollo.
+
 ## Integrantes
 
 <div class="integrantes">
@@ -61,6 +68,9 @@ Este repositorio contiene el backend de una aplicación de ventas para una tiend
 - Express
 - MySQL
 - JWT (JSON Web Tokens)
+- Bcryptjs (dependencies)
+- Dotenv (dependencies)
+- Morgan (dependencies)
 
 # Estructura de archivos
 
@@ -77,11 +87,12 @@ Este repositorio contiene el backend de una aplicación de ventas para una tiend
     - 📁 middleware
         - 📄 authMiddleware.js
     - 📁 routes
-        - 📄 userRoutes.js
-        - 📄 productRoutes.js
-        - 📄 categoryRoutes.js
-        - 📄 cartRoutes.js
-        - 📄 orderRoutes.js
+        - 📄 home.routes.js
+        - 📄 user.routes.js
+        - 📄 product.routes.js
+        - 📄 category.routes.js
+        - 📄 cart.routes.js
+        - 📄 order.routes.js
     - 📄 .env (archivo de configuración requerido)
     - 📄 .gitignore
     - 📄 package.json
@@ -194,30 +205,32 @@ npm run dev
 
 ### Endpoints de la API
 
+- URL PetShopAPI : https://edudev.alwaysdata.net/petshopAPI/
+
 #### Usuarios
 
-- `POST /usuarios/registro` - Crear una cuenta de cliente.
-- `POST /usuarios/login` - Iniciar sesión y obtener un token.
-- `GET /admin/usuarios` - Obtener todos los usuarios (requiere rol de administrador).
-- `GET /admin/usuarios/:id` - Obtener un usuario por ID (requiere rol de administrador).
-- `PUT /admin/usuarios/:id` - Actualizar un usuario por ID (requiere rol de administrador).
-- `DELETE /admin/usuarios/:id` - Borrar un usuario por ID (requiere rol de administrador).
+- `POST user/registro` - Crear una cuenta de cliente.
+- `POST user/login` - Iniciar sesión y obtener un token.
+- `GET user/admin/usuarios` - Obtener todos los usuarios (requiere rol de administrador y token).
+- `GET user/admin/usuarios/:id` - Obtener un usuario por ID (requiere rol de administrador y token).
+- `PUT user/admin/usuarios/:id` - Actualizar un usuario por ID (requiere rol de administrador y token).
+- `DELETE user/admin/usuarios/:id` - Borrar un usuario por ID (requiere rol de administrador y token).
 
 #### Productos
 
-- `POST /admin/productos` - Crear un nuevo producto (requiere rol de administrador).
+- `POST /admin/producto` - Crear un nuevo producto (requiere rol de administrador y token).
 - `GET /productos` - Obtener todos los productos disponibles.
-- `GET /productos/:id` - Obtener un producto por ID.
-- `PUT /admin/productos/:id` - Actualizar un producto por ID (requiere rol de administrador).
-- `DELETE /admin/productos/:id` - Borrar un producto por ID (requiere rol de administrador).
+- `GET /producto/:id` - Obtener un producto por ID.
+- `PUT /admin/producto/:id` - Actualizar un producto por ID (requiere rol de administrador y token).
+- `DELETE /admin/producto/:id` - Borrar un producto por ID (requiere rol de administrador y token).
 
 #### Categorías
 
-- `POST /admin/categorias` - Crear una nueva categoría (requiere rol de administrador).
-- `GET /categorias` - Obtener todas las categorías disponibles.
-- `GET /categorias/:id` - Obtener una categoría por ID.
-- `PUT /admin/categorias/:id` - Actualizar una categoría por ID (requiere rol de administrador).
-- `DELETE /admin/categorias/:id` - Borrar una categoría por ID (requiere rol de administrador).
+- `POST /admin/categorias` - Crear una nueva categoría (requiere rol de administrador y token).
+- `GET /categoria` - Obtener todas las categorías disponibles.
+- `GET /categoria/:id` - Obtener una categoría por ID.
+- `PUT /admin/categoria/:id` - Actualizar una categoría por ID (requiere rol de administrador y token).
+- `DELETE /admin/categoria/:id` - Borrar una categoría por ID (requiere rol de administrador y token).
 
 #### Carrito de Compra
 

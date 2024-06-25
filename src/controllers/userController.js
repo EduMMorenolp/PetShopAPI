@@ -3,6 +3,7 @@ const db = require('../config/database');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+
 // Función para registrar un nuevo usuario
 async function registroUsuario(req, res) {
   const { nombre, email, contraseña } = req.body;
