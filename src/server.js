@@ -1,6 +1,9 @@
 const express = require('express')
 const homeRouter = require('./routes/home.routes')
 const userRoutes = require('./routes/user.routes');
+const productosRouter = require('./routes/product.routes');
+const categoriaRouter = require('./routes/category.routes')
+
 const cors = require('cors');
 const morgan = require('morgan');
 
@@ -20,6 +23,10 @@ app.options('*', cors());
 app.use('/', homeRouter)
 // Rutas de usuario
 app.use('/user', userRoutes);
+//Ruta de Productos
+app.use('/', productosRouter);
+
+app.use('/', categoriaRouter)
 
 app.listen(PORT, () => {
     console.log('\n==================================================')
