@@ -3,6 +3,7 @@ const homeRouter = require('./routes/home.routes');
 const userRoutes = require('./routes/user.routes');
 const productosRouter = require('./routes/product.routes');
 const categoriaRouter = require('./routes/category.routes')
+const orderRoutes = require('./routes/order.routes');
 
 const morgan = require('morgan');
 
@@ -24,6 +25,10 @@ app.use('/user', userRoutes);
 app.use('/', productosRouter);
 
 app.use('/', categoriaRouter)
+
+//Ruta de Ordenes
+app.use('/order', orderRoutes);
+
 
 app.listen(PORT, () => {
     console.log('\n==================================================')
